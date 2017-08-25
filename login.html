@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+var param;
+var result;
+  
+async function xxx(){
+        let response = await fetch('http://localhost:3000/api/user/getOne', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+       id:2
+    })
+});
+let result = await response.json();
+document.getElementById("name").innerHTML = result.name;
+        console.log(result);
+
+    }
+
+function alertInfo(){
+	//param =$("input#num").val();
+	//alert(param);
+	httpResquest();
+	//alert(result);
+	//result = JSON.stringify(result);
+	//document.getElementById("name").innerHTML = result.name;
+	//document.getElementById("age").innerHTML = result.age;
+
+	//alert(result);
+}
+</script>
+</head>
+<body>
+	<input id="num" type="text" name="number"/>
+	<button onclick="xxx()" type="button" >tijiao</button>
+	<br>
+	<br>
+	name:<span id="name"></span><br>
+	age:<span id="age"></span>
+</body>
+</html>
